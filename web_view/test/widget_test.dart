@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:web_view/main.dart';
+import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
+
+class FakeWebViewPlatform extends WebViewPlatform {
+  
+}
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+ 
+
   testWidgets('shows URL entry form', (WidgetTester tester) async {
     await tester.pumpWidget(const GyroWebViewApp());
 
